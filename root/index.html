@@ -1,3 +1,7 @@
+<!-- tuxzilla.com (root), main index page, served by spool */
+/* Copyright (C) 2026, Tuxzilla T. Penguin */
+-->
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -13,7 +17,7 @@
                 background-color: #000000;
                 background-image: radial-gradient(
                     circle at 1px 1px,
-                    rgba(0, 255, 0, 0.1) 1px,
+                    rgb(0, 67, 0) 1px,
                     transparent 0
                 );
                 background-size: 20px 20px;
@@ -25,6 +29,7 @@
                 min-height: 100vh;
                 display: flex;
                 flex-direction: column;
+                padding-top: 80px;
             }
 
             .nav {
@@ -33,15 +38,30 @@
                 top: 0;
                 width: 100%;
                 justify-content: space-between;
-                padding: 16px;
+                align-items: center;
+                padding: 16px 24px;
                 background-color: #000000;
+                border-bottom: 1px solid #003300;
             }
 
-            .nav-page {
+            .nav-current-page {
                 color: #ffffff;
                 font-size: 1.4rem;
-                display: flex;
-                margin-left: 15px
+                display: flex; /* ? does this do anything */
+                margin-left: 15px;
+            }
+
+            .nav-current-page a {
+                color: #ffffff;
+                text-decoration: none;
+            }
+
+            .nav-current-page a:visited {
+                color: #ffffff;
+            }
+
+            .nav-current-page a:hover {
+                text-decoration: underline;
             }
 
             .nav-links {
@@ -61,22 +81,84 @@
                 color: #ffffff;
             }
 
-            .hero {
-                height: 600px;
-                min-width: 100%;
-                # background-color: #000000;
-                border-bottom: 2px solid #00ff00;
-                align-content: center;
-                margin-bottom: 67px;
+            .nav-links a:hover {
+                text-decoration: underline;
             }
+
+            .my-pfp {
+                width: min(400px, 40vw);
+                aspect-ratio: 1;
+                background-image: url(https://cdn.discordapp.com/avatars/1079199944738615367/dde2cd6c226f9b35f12b517e66744a1d.webp?size=1024);
+                background-size: cover;
+                background-position: center;
+                border-radius: 50%; /* tux remember this rounds images !!*/
+            }
+
+            .hero {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 48px;
+                min-height: 600px;
+                width: 100%;
+                padding: 40px;
+                border-bottom: 2px solid #00ff00;
+                margin-bottom: 67px; /* 67 ahehehehahe */
+            }
+
+            .hero-text p {
+                font-size: clamp(1rem, 2vw, 1.5rem);
+            }
+
+            .hero-text h1 {
+                font-size: clamp(2.5rem, 4vw, 3.5rem);
+            }
+
+            .hero-text p {
+                font-size: clamp(2rem, 2vw, 3);
+            }
+
+            .about {
+                width: min(800px, 95%);
+                margin: 0 auto;
+                border: 2px solid #00ff00;
+                padding: 30px;
+                text-align: left;
+            }
+
+            .about p {
+                text-align: left;
+                font-size: clamp(1rem, 2vw, 1.3rem);
+            }
+
+            .about h1 {
+                text-align: left;
+                font-size: clamp(2rem, 4vw, 3rem);
+            }
+
+            .about a {
+                text-decoration: none;
+                color: #00ff00;
+            }
+
+            .about a:hover {
+                text-decoration: underline;
+            }
+
+            .about a:visited {
+                color: #00ff00;
+            }
+
+            /* do i need these?? */
 
             .container-right {
                 margin-left: auto;
-                max-width: 50%;
+                max-width: 400px;
                 border: 2px solid #00ff00;
-                padding: 20px;
-                align-self: left;
+                padding: 40px;
                 align-items: center;
+                margin-right: 67px;
+                background: #0f0f0f;
             }
 
             .container-left {
@@ -84,40 +166,151 @@
                 max-width: 400px;
                 border: 2px solid #00ff00;
                 padding: 40px;
-                align-self: right;
                 align-items: center;
                 margin-left: 67px;
+                background: #0f0f0f;
+            }
+
+            .below {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
             }
 
             h1 {
-                font-size: 3.5rem;
+                font-size: clamp(2rem, 4vw, 3.5rem);
                 margin-bottom: 20px;
                 text-align: center;
                 text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
             }
 
             p {
-                font-size: 1.2rem;
-                text-align: center;
+                font-size: clamp(1rem, 2vw, 1.3rem);
+            }
+
+            @media (max-width: 768px) {
+                .nav {
+                    flex-direction: column;
+                    gap: 12px;
+                    padding: 12px;
+                }
+
+                .nav-page {
+                    margin-left: 0;
+                }
+
+                .nav-links {
+                    margin-right: 0;
+                    gap: 16px;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    font-size: 1rem;
+                }
+
+                body {
+                    padding-top: 120px;
+                }
+
+                .hero {
+                    flex-direction: column;
+                    min-height: auto;
+                    padding: 32px 20px;
+                    gap: 24px;
+                    text-align: center;
+                }
+
+                .hero-image {
+                    width: min(250px, 70vw);
+                }
+
+                .hero-text {
+                    max-width: 100%;
+                }
+
+                .hero-text h1 {
+                    font-size: 2rem;
+                }
+
+                .hero-text p {
+                    font-size: 1rem;
+                }
+
+                .below {
+                    padding: 0 16px;
+                }
+
+                .big-container {
+                    width: 100%;
+                    padding: 24px;
+                }
+
+                .big-container p {
+                    font-size: 1rem;
+                }
+
+                .container-left,
+                .container-right {
+                    width: 100%;
+                    max-width: none;
+                    margin: 16px 0;
+                    padding: 24px;
+                }
             }
         </style>
     </head>
     <body>
         <div class="nav">
-            <div class="nav-page">tuxzilla.com</div>
+            <div class="nav-current-page">
+                <a href="https://tuxzilla.com/sitedir">tuxzilla.com</a>
+            </div>
             <div class="nav-links">
                 <a href="https://tuxzilla.com/">home</a>
-                <a href="https://tuxzilla.com/about">about</a>
+                <a href="https://tuxzilla.com/projects">projects</a>
+                <a href="https://tuxzilla.com/about">examples</a>
                 <a href="https://hire.tuxzilla.com/">hire me</a>
             </div>
         </div>
 
         <div class="hero">
-            <h1>Hi There!</h1>
-            <p>Welcome to my Website!</p>
-            <p></p>
+            <div class="my-pfp"></div>
+            <div class="hero-text">
+                <h1>Tuxzilla</h1>
+                <p>developer</p>
+                <!-- give self more titles HERE!! -->
+            </div>
         </div>
 
-        <div class="container-left">this is some text in a container</div>
+        <!-- hi dumbass make the H1 smaller lol-->
+        <!-- shut up i did that -->
+
+        <div class="below">
+            <div class="about">
+                <h1>Hi There! I'm Tuxzilla!</h1>
+                <p>About Me:</p>
+                <p>
+                    I'm a freelance developer specializing in Rust and Web
+                    Development
+                </p>
+                <p>
+                    You can check out some of my projects
+                    <a href="https://tuxzilla.com/projects">here</a>
+                    <!-- reminder make this colored LOL-->
+                </p>
+                <p>
+                    and if you want some of my example sites look
+                    <a href="https://tuxzilla.com/examples">here</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- <details>
+            <summary>cdn.tuxzilla.com</summary>
+            <div class="content">
+                <h3>What is tuxcdn?</h3>
+                <p>
+                    Blahblahblah
+                </p>
+            </div>
+            </details> this is for safe storage when i make the directory-->
     </body>
 </html>
