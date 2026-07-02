@@ -1,5 +1,6 @@
-<!-- tuxzilla.com (root), main index page */
-/* Copyright (C) 2026, Tuxzilla T. Penguin */
+<!--
+  tuxzilla.com (root), main index page
+  Copyright (C) 2026, Tuxzilla T. Penguin
 -->
 
 <!doctype html>
@@ -7,310 +8,213 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>tuxzilla.com</title>
+        <title>Tuxzilla | penguin developer</title>
+        <!-- TODO: change to ceo of sex -->
+        <meta
+            name="description"
+            content="Tuxzilla T. Penguin's Official Website"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Tuxzilla | Software Dev" />
+        <meta
+            property="og:description"
+            content="cool penguin software developer"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://tuxzilla.com/" />
+        <meta
+            property="og:image"
+            content="https://cdn.discordapp.com/avatars/1079199944738615367/dde2cd6c226f9b35f12b517e66744a1d.webp"
+        />
+
         <link
             href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap"
             rel="stylesheet"
         />
-        <style>
-            body {
-                background-color: #000000;
-                background-image: radial-gradient(
-                    circle at 1px 1px,
-                    rgb(0, 67, 0) 1px,
-                    transparent 0
-                );
-                background-size: 20px 20px;
-                color: #00ff00;
-                font-family: "Ubuntu Mono", monospace;
-                text-align: center;
-                padding: 0;
-                margin: 0;
-                min-height: 100vh;
-                display: flex;
-                flex-direction: column;
-                padding-top: 80px;
-            }
-
-            .nav {
-                position: fixed;
-                display: flex;
-                top: 0;
-                width: 100%;
-                justify-content: space-between;
-                align-items: center;
-                padding: 16px 24px;
-                background-color: #000000;
-                border-bottom: 1px solid #003300;
-            }
-
-            .nav-current-page {
-                color: #ffffff;
-                font-size: 1.4rem;
-                display: flex; /* ? does this do anything */
-                margin-left: 15px;
-            }
-
-            .nav-current-page a {
-                color: #ffffff;
-                text-decoration: none;
-            }
-
-            .nav-current-page a:visited {
-                color: #ffffff;
-            }
-
-            .nav-current-page a:hover {
-                text-decoration: underline;
-            }
-
-            .nav-links {
-                font-size: 1.4rem;
-                display: flex;
-                margin-right: 40px;
-                gap: 24px;
-                color: #ffffff;
-            }
-
-            .nav-links a {
-                color: #ffffff;
-                text-decoration: none;
-            }
-
-            .nav-links a:visited {
-                color: #ffffff;
-            }
-
-            .nav-links a:hover {
-                text-decoration: underline;
-            }
-
-            .my-pfp {
-                width: min(400px, 40vw);
-                aspect-ratio: 1;
-                background-image: url(https://cdn.discordapp.com/avatars/1079199944738615367/dde2cd6c226f9b35f12b517e66744a1d.webp?size=1024);
-                background-size: cover;
-                background-position: center;
-                border-radius: 50%; /* tux remember this rounds images !!*/
-            }
-
-            .hero {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: 48px;
-                min-height: 600px;
-                width: 100%;
-                padding: 40px;
-                border-bottom: 2px solid #00ff00;
-                margin-bottom: 67px; /* 67 ahehehehahe */
-            }
-
-            .hero-text p {
-                font-size: clamp(1rem, 2vw, 1.5rem);
-            }
-
-            .hero-text h1 {
-                font-size: clamp(2.5rem, 4vw, 3.5rem);
-            }
-
-            .hero-text p {
-                font-size: clamp(2rem, 2vw, 3);
-            }
-
-            .about {
-                width: min(800px, 95%);
-                margin: 0 auto;
-                border: 2px solid #00ff00;
-                padding: 30px;
-                text-align: left;
-            }
-
-            .about p {
-                text-align: left;
-                font-size: clamp(1rem, 2vw, 1.3rem);
-            }
-
-            .about h1 {
-                text-align: left;
-                font-size: clamp(2rem, 4vw, 3rem);
-            }
-
-            .about a {
-                text-decoration: none;
-                color: #00ff00;
-            }
-
-            .about a:hover {
-                text-decoration: underline;
-            }
-
-            .about a:visited {
-                color: #00ff00;
-            }
-
-            /* do i need these?? */
-
-            .container-right {
-                margin-left: auto;
-                max-width: 400px;
-                border: 2px solid #00ff00;
-                padding: 40px;
-                align-items: center;
-                margin-right: 67px;
-                background: #0f0f0f;
-            }
-
-            .container-left {
-                margin-right: auto;
-                max-width: 400px;
-                border: 2px solid #00ff00;
-                padding: 40px;
-                align-items: center;
-                margin-left: 67px;
-                background: #0f0f0f;
-            }
-
-            .below {
-                display: flex;
-                justify-content: space-around;
-                align-items: center;
-            }
-
-            h1 {
-                font-size: clamp(2rem, 4vw, 3.5rem);
-                margin-bottom: 20px;
-                text-align: center;
-                text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
-            }
-
-            p {
-                font-size: clamp(1rem, 2vw, 1.3rem);
-            }
-
-            @media (max-width: 768px) {
-                .nav {
-                    flex-direction: column;
-                    gap: 12px;
-                    padding: 12px;
-                }
-
-                .nav-page {
-                    margin-left: 0;
-                }
-
-                .nav-links {
-                    margin-right: 0;
-                    gap: 16px;
-                    flex-wrap: wrap;
-                    justify-content: center;
-                    font-size: 1rem;
-                }
-
-                body {
-                    padding-top: 120px;
-                }
-
-                .hero {
-                    flex-direction: column;
-                    min-height: auto;
-                    padding: 32px 20px;
-                    gap: 24px;
-                    text-align: center;
-                }
-
-                .hero-image {
-                    width: min(250px, 70vw);
-                }
-
-                .hero-text {
-                    max-width: 100%;
-                }
-
-                .hero-text h1 {
-                    font-size: 2rem;
-                }
-
-                .hero-text p {
-                    font-size: 1rem;
-                }
-
-                .below {
-                    padding: 0 16px;
-                }
-
-                .big-container {
-                    width: 100%;
-                    padding: 24px;
-                }
-
-                .big-container p {
-                    font-size: 1rem;
-                }
-
-                .container-left,
-                .container-right {
-                    width: 100%;
-                    max-width: none;
-                    margin: 16px 0;
-                    padding: 24px;
-                }
-            }
-        </style>
+        <link rel="stylesheet" href="styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
     </head>
-    <body>
-        <div class="nav">
+    <body class="tuxzilla">
+        <header class="nav">
             <div class="nav-current-page">
-                <a href="https://tuxzilla.com/sitedir">tuxzilla.com</a>
+                <a href="https://tuxzilla.com/">tuxzilla.com</a>
             </div>
-            <div class="nav-links">
+            <nav class="nav-links">
                 <a href="https://tuxzilla.com/">home</a>
                 <a href="https://tuxzilla.com/projects">projects</a>
-                <a href="https://tuxzilla.com/about">examples</a>
-                <a href="https://hire.tuxzilla.com/">hire me</a>
-            </div>
-        </div>
+                <!-- <a href="https://hire.tuxzilla.com/">hire me</a> -->
+                <a href="https://baseplatia.net/">baseplatia</a>
+            </nav>
+        </header>
 
-        <div class="hero">
-            <div class="my-pfp"></div>
-            <div class="hero-text">
-                <h1>Tuxzilla</h1>
-                <p>developer</p>
-                <!-- give self more titles HERE!! -->
-            </div>
-        </div>
+        <main>
+            <section class="hero">
+                <div class="my-pfp"></div>
+                <div class="hero-text">
+                    <h1>Tuxzilla</h1>
+                    <p>horrible developer</p>
+                    <p>linux fan</p>
+                    <!-- give self more titles HERE!! -->
+                </div>
+            </section>
 
-        <!-- hi dumbass make the H1 smaller lol-->
-        <!-- shut up i did that -->
+            <section>
+                <div class="about">
+                    <h2>Hi There! I'm Tuxzilla!</h2>
+                    <p><strong>Little bit about me:</strong></p>
+                    <p>
+                        I really like building web stuff. Should I take a crack
+                        at regular software? probably
+                    </p>
+                    <p>i'm the president of baseplatia</p>
+                    <p>big rustacean</p>
+                </div>
+            </section>
 
-        <div class="below">
-            <div class="about">
-                <h1>Hi There! I'm Tuxzilla!</h1>
-                <p>About Me:</p>
+            <section>
+                <div class="lots-of-containers">
+                    <div class="container-left">
+                        <h3>list of languages i know:</h3>
+                        <ul>
+                            <li><i class="fa-brands fa-rust"></i> Rust</li>
+                            <li><i class="fa-brands fa-python"></i> Python</li>
+                            <li>
+                                <i class="fa-brands fa-html5"></i> HTML /
+                                <i class="fa-brands fa-css3-alt"></i> CSS
+                            </li>
+                            <li>I met JSON</li>
+                            <li>console.log</li>
+                        </ul>
+                    </div>
+                    <div class="container-right">
+                        <h3>site facts:</h3>
+                        <ul>
+                            <li>Written with Zed</li>
+                            <li>Written in HTML and CSS</li>
+                            <li>Hosted on my desktop</li>
+                            <li>Using Podman + Nginx</li>
+                            <li>Behind a Cloudflare tunnel</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="advertthatisntacopyofabout">
+                    <p>
+                        All the stuff I've made you can check out
+                        <a href="https://tuxzilla.com/projects">here</a>
+                    </p>
+                    <p>
+                        You should also join my
+                        <a href="https://tuxzilla.com/invite">discord server</a
+                        >, tuxzillas testing grounds 6 and read this incredibly
+                        beautiful article on
+                        <a href="https://tuxzilla.com/ttg">the lore of ttg</a>
+                    </p>
+                    <p>
+                        and of course, my other server
+                        <a href="https://baseplatia.net">baseplatia</a>
+                        (which you should also join.)
+                    </p>
+                    <p>
+                        to check out a helpful directory of this site go
+                        <a href="/sitedir">here</a>
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-inner">
+                <div class="footer-col">
+                    <h4>Links</h4>
+                    <ul>
+                        <li>
+                            <a href="https://tuxzilla.com/"
+                                ><i class="fas fa-home"></i> Home</a
+                            >
+                        </li>
+                        <li>
+                            <a href="https://baseplatia.net"
+                                ><i class="fab fa-discord"></i> Baseplatia</a
+                            >
+                        </li>
+                        <li>
+                            <a href="https://status.tuxzilla.com"
+                                ><i class="fas fa-server"></i> Status</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li>
+                            <a href="https://mail.tuxzilla.com"
+                                ><i class="fas fa-envelope"></i> TuxMail</a
+                            >
+                        </li>
+                        <li>
+                            <a href="https://tuxhost.cloud"
+                                ><i class="fas fa-server"></i> TuxHost</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li>
+                            <a href="/tos.html"
+                                ><i class="fas fa-gavel"></i> Terms of
+                                Service</a
+                            >
+                        </li>
+                        <li>
+                            <a href="/privacy.html"
+                                ><i class="fas fa-user-shield"></i> Privacy
+                                Policy</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
                 <p>
-                    I'm a freelance developer specializing in Rust and Web
-                    Development
-                </p>
-                <p>
-                    You can check out some of my projects
-                    <a href="https://tuxzilla.com/projects">here</a>
-                    <!-- reminder make this colored LOL-->
-                </p>
-                <p>
-                    and if you want some of my example sites look
-                    <a href="https://tuxzilla.com/examples">here</a>
+                    Services Provided and Hosted by tuxza | Copyright Tuxzilla
+                    T. Penguin 2026
                 </p>
             </div>
-        </div>
+        </footer>
 
-        <!-- <details>
-            <summary>cdn.tuxzilla.com</summary>
-            <div class="content">
-                <h3>What is tuxcdn?</h3>
-                <p>
-                    Blahblahblah
-                </p>
-            </div>
-            </details> this is for safe storage when i make the directory-->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "ProfilePage",
+                "mainEntity": {
+                    "@type": "Person",
+                    "name": "Tuxzilla",
+                    "alternateName": "Tuxzilla T. Penguin",
+                    "jobTitle": "Software Developer",
+                    "knowsAbout": [
+                        "Rust (Programming Language)",
+                        "Web Development",
+                        "Linux"
+                    ],
+                    "url": "https://tuxzilla.com/"
+                }
+            }
+        </script>
+        <script>
+            console.log("GET OUT OF ME SWAMP!");
+            console.log("wait tux you had to use JS to say this!");
+            console.log("noooooo");
+            console.log("stop snooping tho lil bro");
+        </script>
+        <!-- get a load of this dumbass having two script fields doesnt even know what hes doing smh -->
     </body>
 </html>
