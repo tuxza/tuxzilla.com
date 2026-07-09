@@ -6,7 +6,7 @@
 
 @font-face {
     font-family: "Legothick";
-    src: url("fonts/legothick.ttf") format("truetype");
+    src: url("static.tuxzilla.com/fonts/legothick.woff") format("woff");
     font-weight: normal;
     font-style: normal;
 }
@@ -164,6 +164,14 @@ body {
     border-bottom: 2px solid var(--accent-color);
     margin-bottom: 67px;
     background: var(--container-bg);
+}
+
+.lil-hero p {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+.lil-hero h1 {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
 }
 
 /* tux u bum just use about again */
