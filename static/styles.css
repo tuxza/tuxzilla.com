@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+/* i actually dont know if im gonna use this lmao! */
+
 @font-face {
     font-family: "Legothick";
     src: url("static.tuxzilla.com/fonts/legothick.woff") format("woff");
