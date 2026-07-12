@@ -10,39 +10,132 @@
         />
         <link rel="stylesheet" href="https://static.tuxzilla.com/styles.css" />
     </head>
-    <body>
-        <div class="nav">
+    <body class="tuxzilla">
+        <header class="nav">
             <div class="nav-current-page">
-                <a href="https://tuxzilla.com/sitedir">tuxzilla.com</a>
+                <a href="https://tuxzilla.com/">tuxzilla.com</a>
             </div>
-            <div class="nav-links">
+            <nav class="nav-links">
                 <a href="https://tuxzilla.com/">home</a>
                 <a href="https://tuxzilla.com/projects">projects</a>
-                <a href="https://tuxzilla.com/about">examples</a>
-                <a href="https://hire.tuxzilla.com/">hire me</a>
-            </div>
-        </div>
+                <!-- <a href="https://hire.tuxzilla.com/">hire me</a> -->
+                <a href="https://baseplatia.net/">baseplatia</a>
+            </nav>
+        </header>
 
         <div class="lil-hero">
             <h1>~/projects</h1>
         </div>
-        <div class="botplate">
+        <div class="project">
             <h2>Botplate</h2>
             <p>
-                Botplate is an Discord bot that (poorly, I say) simulates an
-                economy inside a Discord server.
+                A Discord economy simu where users can create businesses,
+                trade goods, earn TuxBux, invest, pay taxes, and probably other stuff i forgot about.
             </p>
             <p>
-                Users can create business, buy and sell goods, earn "TuxBux",
-                Invest in stock, pay tax, get married, go to jail. All the fun
-                stuff.
+                Originally written in Python.. Currently being rewritten in Rust
+                because the original codebase was the worst thing I've ever created.
             </p>
             <p>
-                The original Python codebase for it is so embarassingly horrible
-                I've chose to rewrite it in Rust. Once that is finished, I plan
-                to upload it to my
-                <a href="https://github.com/tuxza/">GitHub.</a>
+                Status:
+                <span class="status">rewriting...</span>
             </p>
+            <a href="https://github.com/tuxza/botplate">GitHub</a>
         </div>
+
+        <div class="project">
+            <h2>Spool</h2>
+            <p>
+                A Rust-powered web based file sharing platform
+            </p>
+            <p>
+                Built with Axum, SQLx, and my own custom cache <br>
+                Oh, and lots of love.
+            </p>
+            <p>
+                Status:
+                <span class="status">in development...</span>
+            </p>
+            <a href="https://github.com/tuxza/spool">GitHub</a>
+        </div>
+
+        <div class="project">
+            <h2>Mochi</h2>
+            <p>
+                an analytics tracker for everything
+            </p>
+            <p>
+                most LIKELY will be written in Go. <br>
+                also its named after my cat
+            </p>
+            <p>
+                Status:
+                <span class="status">planned...</span>
+            </p>
+            <a href="https://github.com/tuxza/mochi">GitHub</a>
+        </div>
+
+        <footer>
+            <div class="footer-inner">
+                <div class="footer-col">
+                    <h4>Links</h4>
+                    <ul>
+                        <li>
+                            <a href="https://tuxzilla.com/"
+                                ><i class="fas fa-home"></i> Home</a
+                            >
+                        </li>
+                        <li>
+                            <a href="https://baseplatia.net"
+                                ><i class="fab fa-discord"></i> Baseplatia</a
+                            >
+                        </li>
+                        <li>
+                            <a href="https://status.tuxzilla.com"
+                                ><i class="fas fa-server"></i> Status</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li>
+                            <a href="https://mail.tuxzilla.com"
+                                ><i class="fas fa-envelope"></i> TuxMail</a
+                            >
+                        </li>
+                        <li>
+                            <a href="https://tuxhost.cloud"
+                                ><i class="fas fa-server"></i> TuxHost</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li>
+                            <a href="/tos.html"
+                                ><i class="fas fa-gavel"></i> Terms of
+                                Service</a
+                            >
+                        </li>
+                        <li>
+                            <a href="/privacy.html"
+                                ><i class="fas fa-user-shield"></i> Privacy
+                                Policy</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>
+                    Services Provided and Hosted by tuxza | Copyright Tuxzilla
+                    T. Penguin 2026
+                </p>
+            </div>
+        </footer>
     </body>
 </html>

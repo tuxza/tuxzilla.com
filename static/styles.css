@@ -373,7 +373,7 @@ li {
     font-size: clamp(1rem, 2vw, 1.3rem);
 }
 
-.botplate {
+.project {
     width: min(800px, 95%);
     margin: 0 auto;
     border: 2px solid var(--accent-color);
@@ -383,32 +383,39 @@ li {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    margin-top: 20px;
 }
 
-.botplate h1 {
+.project h1 {
     text-align: left;
     font-size: clamp(2rem, 4vw, 3rem);
     margin-bottom: 20px;
 }
 
-.botplate p {
+.project p {
     text-align: left;
     font-size: clamp(1rem, 2vw, 1.3rem);
     color: var(--text-content);
 }
 
-.botplate a {
+.project a {
     text-decoration: none;
     color: var(--link-color);
 }
 
-.botplate a:hover {
+.project a:hover {
     color: var(--text-content);
     text-decoration: underline;
 }
 
-.botplate a:visited {
+.project a:visited {
     color: var(--link-color);
+}
+
+.project status {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    color: var(--text-content);
+    align-content: center;
 }
 
 .bpl8-hero {
@@ -421,6 +428,7 @@ footer {
     padding: 3rem 2rem 1.5rem;
     position: relative;
     z-index: 1;
+    margin-top: 20px;
 }
 
 .footer-inner {
